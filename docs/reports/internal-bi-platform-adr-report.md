@@ -108,6 +108,27 @@ No ADRs are currently overdue for review.
 | ADR-0015 | Deprecate Browser-Only Dashboard Snapshot Rendering | Deprecated | 2026-04-30 | data-platform-team | reporting | reporting, dashboard-snapshot, deprecated | 2026-05-05 |  | ADR-0016 | docs\adr\0015-deprecate-browser-only-dashboard-rendering.md |
 | ADR-0016 | Use Server-Side Rendering for Scheduled Report Snapshots | Accepted | 2026-05-02 | data-platform-team | reporting | reporting, dashboard-snapshot, worker | 2026-11-02 | ADR-0015 |  | docs\adr\0016-use-server-side-rendering-for-report-snapshots.md |
 
+## Git History
+
+| ID | Title | Last Modified | Author | Commit |
+| --- | --- | --- | --- | --- |
+| ADR-0001 | Use PostgreSQL for Application Metadata | 2026-05-11 | DF | 0f8703c |
+| ADR-0002 | Separate Query Execution into a Dedicated Service | 2026-05-11 | DF | 0f8703c |
+| ADR-0003 | Use OIDC for User Authentication | 2026-05-11 | DF | 0f8703c |
+| ADR-0004 | Use a Semantic Layer for Governed Metrics | 2026-05-11 | DF | 0f8703c |
+| ADR-0005 | Support CSV Upload for Small Ad Hoc Datasets | 2026-05-11 | DF | 0f8703c |
+| ADR-0006 | Cache Dashboard Query Results | 2026-05-11 | DF | 0f8703c |
+| ADR-0007 | Use Hosted LLM Provider for Natural-Language Querying | 2026-05-11 | DF | 0f8703c |
+| ADR-0008 | Reject Unrestricted SQL Access for Viewers | 2026-05-11 | DF | 0f8703c |
+| ADR-0009 | Use S3-Compatible Object Storage for Uploads and Exports | 2026-05-11 | DF | 0f8703c |
+| ADR-0010 | Use OpenTelemetry for Observability Instrumentation | 2026-05-11 | DF | 0f8703c |
+| ADR-0011 | Use Durable Workflow Engine for Async Jobs | 2026-05-11 | DF | 0f8703c |
+| ADR-0012 | Use Worker Queue for MVP Async Jobs | 2026-05-11 | DF | 0f8703c |
+| ADR-0013 | Enforce Row-Level Access Policies in Query Service | 2026-05-11 | DF | 0f8703c |
+| ADR-0014 | Use Cloud-Agnostic Container Deployment | 2026-05-11 | DF | 0f8703c |
+| ADR-0015 | Deprecate Browser-Only Dashboard Snapshot Rendering | 2026-05-11 | DF | 0f8703c |
+| ADR-0016 | Use Server-Side Rendering for Scheduled Report Snapshots | 2026-05-11 | DF | 0f8703c |
+
 ## Decision Timeline
 
 | Date | ID | Title | Status | Owner |
