@@ -1,0 +1,88 @@
+name: Publish ADR Report to GitHub Pages
+
+on:
+  push:
+    branches:
+      - main
+    paths:
+      - "docs/adr/**"
+      - "scripts/**"
+      - "requirements.txt"
+      - ".github/workflows/pages.yml"
+
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+concurrency:
+  group: github-pages
+  cancel-in-progress: false
+
+jobs:
+  build:
+    name: Build ADR static site
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Install Python dependencies
+        run: pip install -r requirements.txt
+
+      - name: Validate ADRs
+        run: |
+          python scripts/generate_adr_report.py \
+            --adr-dir docs/adr \
+            --validate-only
+
+      - name: Generate Markdown ADR report
+        run: |
+          python scripts/generate_adr_report.py \
+            --adr-dir docs/adr \
+            --application internal-bi-platform \
+            --title "Internal BI Platform ADR Report" \
+            --output docs/reports/internal-bi-platform-adr-report.md \
+            --include-git
+
+      - name: Create site directory
+        run: mkdir -p site
+
+      - name: Generate HTML ADR report
+        run: |
+          python scripts/generate_adr_html_report.py \
+            --input docs/reports/internal-bi-platform-adr-report.md \
+            --output site/index.html \
+            --title "Internal BI Platform ADR Report"
+
+      - name: Add nojekyll marker
+        run: touch site/.nojekyll
+
+      - name: Upload Pages artifact
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: site
+
+  deploy:
+    name: Deploy to GitHub Pages
+    needs: build
+    runs-on: ubuntu-latest
+
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+
+    steps:
+      - name: Deploy Pages site
+        id: deployment
+        uses: actions/deploy-pages@v4
