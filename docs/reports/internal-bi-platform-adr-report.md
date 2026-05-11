@@ -4,8 +4,8 @@ Generated on: `2026-05-11`
 
 ## Summary
 
-- Total ADRs: 16
-- Accepted: 13
+- Total ADRs: 17
+- Accepted: 14
 - Deprecated: 1
 - Proposed: 1
 - Rejected: 1
@@ -16,7 +16,7 @@ Generated on: `2026-05-11`
 
 | Status | Count |
 | --- | --- |
-| Accepted | 13 |
+| Accepted | 14 |
 | Deprecated | 1 |
 | Proposed | 1 |
 | Rejected | 1 |
@@ -32,7 +32,7 @@ Generated on: `2026-05-11`
 | infrastructure | 2 |
 | observability | 1 |
 | performance | 1 |
-| reporting | 2 |
+| reporting | 3 |
 | security | 2 |
 | workflow | 2 |
 
@@ -40,7 +40,7 @@ Generated on: `2026-05-11`
 
 | Owner | Count |
 | --- | --- |
-| data-platform-team | 9 |
+| data-platform-team | 10 |
 | platform-infrastructure-team | 2 |
 | platform-observability-team | 1 |
 | platform-performance-team | 1 |
@@ -50,16 +50,16 @@ Generated on: `2026-05-11`
 
 | Tag | Count |
 | --- | --- |
+| dashboard-snapshot | 3 |
+| reporting | 3 |
 | security | 3 |
+| worker | 3 |
 | async-jobs | 2 |
 | authorization | 2 |
 | csv | 2 |
-| dashboard-snapshot | 2 |
 | metrics | 2 |
 | object-storage | 2 |
 | query-service | 2 |
-| reporting | 2 |
-| worker | 2 |
 | ai | 1 |
 | architecture | 1 |
 | caching | 1 |
@@ -106,7 +106,8 @@ No ADRs are currently overdue for review.
 | ADR-0013 | Enforce Row-Level Access Policies in Query Service | Accepted | 2026-04-18 | platform-security-team | security | row-level-security, authorization, query-service | 2026-10-18 |  |  | docs\adr\0013-use-row-level-access-policies.md |
 | ADR-0014 | Use Cloud-Agnostic Container Deployment | Accepted | 2026-04-22 | platform-infrastructure-team | infrastructure | containers, kubernetes, cloud-agnostic | 2026-10-22 |  |  | docs\adr\0014-use-cloud-agnostic-container-deployment.md |
 | ADR-0015 | Deprecate Browser-Only Dashboard Snapshot Rendering | Deprecated | 2026-04-30 | data-platform-team | reporting | reporting, dashboard-snapshot, deprecated | 2026-05-05 |  | ADR-0016 | docs\adr\0015-deprecate-browser-only-dashboard-rendering.md |
-| ADR-0016 | Use Server-Side Rendering for Scheduled Report Snapshots | Accepted | 2026-05-02 | data-platform-team | reporting | reporting, dashboard-snapshot, worker | 2026-11-02 | ADR-0015 |  | docs\adr\0016-use-server-side-rendering-for-report-snapshots.md |
+| ADR-0016 | Use Server-Side Rendering for Scheduled Report Snapshots | Accepted | 2026-05-02 | data-platform-team | reporting | reporting, dashboard-snapshot, worker | 2026-11-02 | ADR-0015 |  | docs\adr\0016-use-server-side-rendering-for-report-snapshots - Copy.md |
+| ADR-0017 | Use Server-Side Rendering for Scheduled Report Snapshots | Accepted | 2026-05-02 | data-platform-team | reporting | reporting, dashboard-snapshot, worker | 2026-11-02 | ADR-0015 |  | docs\adr\0017-use-client-side-rendering-for-report-snapshots.md |
 
 ## Git History
 
@@ -127,7 +128,8 @@ No ADRs are currently overdue for review.
 | ADR-0013 | Enforce Row-Level Access Policies in Query Service | 2026-05-11 | DF | 0f8703c |
 | ADR-0014 | Use Cloud-Agnostic Container Deployment | 2026-05-11 | DF | 0f8703c |
 | ADR-0015 | Deprecate Browser-Only Dashboard Snapshot Rendering | 2026-05-11 | DF | 0f8703c |
-| ADR-0016 | Use Server-Side Rendering for Scheduled Report Snapshots | 2026-05-11 | DF | 0f8703c |
+| ADR-0016 | Use Server-Side Rendering for Scheduled Report Snapshots |  |  |  |
+| ADR-0017 | Use Server-Side Rendering for Scheduled Report Snapshots |  |  |  |
 
 ## Decision Timeline
 
@@ -149,3 +151,4 @@ No ADRs are currently overdue for review.
 | 2026-04-22 | ADR-0014 | Use Cloud-Agnostic Container Deployment | Accepted | platform-infrastructure-team |
 | 2026-04-30 | ADR-0015 | Deprecate Browser-Only Dashboard Snapshot Rendering | Deprecated | data-platform-team |
 | 2026-05-02 | ADR-0016 | Use Server-Side Rendering for Scheduled Report Snapshots | Accepted | data-platform-team |
+| 2026-05-02 | ADR-0017 | Use Server-Side Rendering for Scheduled Report Snapshots | Accepted | data-platform-team |
